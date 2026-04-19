@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kreed × 知了 — 认知成长引擎。将每一次阅读化为可见的信号，将每一份理解沉淀为你的认知势能。">
+  <meta property="og:title" content="Kreed × 知了 — 让微小的鸣声，汇聚为你的长风">
+  <meta property="og:description" content="将阅读行为量化、结构化、可视化的认知成长引擎。免费开始你的微鸣之旅。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kreed.top">
+  <meta property="og:image" content="https://kreed.top/assets/og-image.png">
+  <meta property="og:locale" content="zh_CN">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Kreed × 知了 — 让微小的鸣声，汇聚为你的长风">
+  <meta name="twitter:description" content="将阅读行为量化、结构化、可视化的认知成长引擎。">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Ccircle cx='64' cy='64' r='60' fill='%231A4D2E'/%3E%3Cellipse cx='64' cy='72' rx='24' ry='30' fill='%23D4A843' opacity='0.9'/%3E%3Cellipse cx='52' cy='58' rx='6' ry='8' fill='%23E6EDF3'/%3E%3Cellipse cx='76' cy='58' rx='6' ry='8' fill='%23E6EDF3'/%3E%3Cpath d='M36 44 Q28 24 44 32' stroke='%23D4A843' stroke-width='3' fill='none'/%3E%3Cpath d='M92 44 Q100 24 84 32' stroke='%23D4A843' stroke-width='3' fill='none'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <title>Kreed × 知了 — 让微小的鸣声，汇聚为你的长风</title>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="container navbar__inner">
+      <a href="#hero" class="navbar__logo">
+        <strong>Kreed</strong> × 知了
+      </a>
+      <div class="navbar__links">
+        <a href="#pillars">为什么</a>
+        <a href="#how-it-works">如何运作</a>
+        <a href="#gamification">游戏化</a>
+        <a href="#pricing">定价</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <a href="#pricing" class="navbar__cta">免费开始</a>
+    </div>
+  </nav>
+
+  <!-- ============================== -->
+  <!-- Section 1: Hero                -->
+  <!-- ============================== -->
+  <section class="hero" id="hero">
+    <canvas id="particle-canvas"></canvas>
+
+    <div class="hero-content">
+      <h1>让微小的鸣声，<br>汇聚为你的长风。</h1>
+      <p class="hero__subtitle">
+        Kreed × 知了，将每一次阅读化为可见的信号，将每一份理解沉淀为你的认知势能。
+      </p>
+
+      <div class="hero-poem">
+        <span>微小，却不息。</span>
+        <span>不息，便成势。</span>
+        <span>成势，终能飞。</span>
+      </div>
+
+      <a href="#pricing" class="hero-cta">免费开始你的微鸣之旅</a>
+    </div>
+
+    <div class="global-counter" id="global-counter">
+      <span class="global-counter__label">全球微鸣</span>
+      <strong id="counter-number">0</strong>
+    </div>
+  </section>
+
+  <!-- ============================== -->
+  <!-- Section 2: 品牌三大支柱         -->
+  <!-- ============================== -->
+  <section class="pillars" id="pillars">
+    <div class="container">
+      <h2 class="section-title">品牌三大支柱</h2>
+      <p class="section-subtitle">从微鸣到展翼，你的认知成长之路</p>
+
+      <div class="pillars-grid">
+        <article class="pillar-card animate-on-scroll" data-animate="fade-up">
+          <div class="pillar-icon">
+            <svg width="48" aria-hidden="true" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="24" cy="24" r="20" stroke="#D4A843" stroke-width="2" fill="none"/>
+              <circle cx="24" cy="24" r="4" fill="#D4A843"/>
+              <path d="M24 8 L24 12 M24 36 L24 40 M8 24 L12 24 M36 24 L40 24" stroke="#D4A843" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>微鸣可见</h3>
+          <p>
+            每一次阅读都是一声微鸣。Kreed 让它们被记录、被量化、被看见。
+          </p>
+        </article>
+
+        <article class="pillar-card animate-on-scroll" data-animate="fade-up" data-animate-delay="150">
+          <div class="pillar-icon">
+            <svg width="48" aria-hidden="true" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 40 L16 20 L24 32 L32 12 L40 28" stroke="#D4A843" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="16" cy="20" r="3" fill="#1A4D2E" stroke="#D4A843" stroke-width="2"/>
+              <circle cx="32" cy="12" r="3" fill="#1A4D2E" stroke="#D4A843" stroke-width="2"/>
+            </svg>
+          </div>
+          <h3>聚沙成势</h3>
+          <p>
+            微鸣虽微，日复一日。当它们被聚合，便开始形成势能。
+          </p>
+        </article>
+
+        <article class="pillar-card animate-on-scroll" data-animate="fade-up" data-animate-delay="300">
+          <div class="pillar-icon">
+            <svg width="48" aria-hidden="true" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M24 36 Q8 28 12 16 Q16 8 24 12 Q32 8 36 16 Q40 28 24 36Z" stroke="#D4A843" stroke-width="2" fill="none"/>
+              <path d="M24 36 L24 44" stroke="#8B7355" stroke-width="2" stroke-linecap="round"/>
+              <path d="M16 8 L12 4 M32 8 L36 4" stroke="#D4A843" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>厚积展翼</h3>
+          <p>
+            当势能足够，蝉便展翼。当知识结构化，你的认知便自然展开。
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== -->
+  <!-- Section 3: How It Works        -->
+  <!-- ============================== -->
+  <section class="how-it-works" id="how-it-works">
+    <div class="container">
+      <h2 class="section-title">如何运作</h2>
+      <p class="section-subtitle">四步开启认知成长</p>
+
+      <div class="steps-grid">
+        <article class="step animate-on-scroll" data-animate="fade-up">
+          <div class="step-number">01</div>
+          <div class="step-icon">
+            <svg width="64" aria-hidden="true" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="12" y="8" width="40" height="48" rx="4" stroke="#D4A843" stroke-width="2" fill="none"/>
+              <path d="M20 20 H44 M20 28 H44 M20 36 H36" stroke="#E6EDF3" stroke-width="1.5" stroke-linecap="round"/>
+              <circle cx="40" cy="44" r="6" fill="#1A4D2E" stroke="#D4A843" stroke-width="2"/>
+              <path d="M38 44 L40 46 L43 42" stroke="#D4A843" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>记录微鸣</h3>
+          <p>自动捕捉阅读中的每一个停顿、标注和思考</p>
+        </article>
+
+        <article class="step animate-on-scroll" data-animate="fade-up" data-animate-delay="100">
+          <div class="step-number">02</div>
+          <div class="step-icon">
+            <svg width="64" aria-hidden="true" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="20" cy="20" r="8" stroke="#D4A843" stroke-width="2" fill="none"/>
+              <circle cx="44" cy="20" r="8" stroke="#D4A843" stroke-width="2" fill="none"/>
+              <circle cx="32" cy="44" r="8" stroke="#D4A843" stroke-width="2" fill="none"/>
+              <line x1="26" y1="24" x2="30" y2="38" stroke="#8B7355" stroke-width="1.5"/>
+              <line x1="38" y1="24" x2="34" y2="38" stroke="#8B7355" stroke-width="1.5"/>
+              <line x1="28" y1="20" x2="36" y2="20" stroke="#8B7355" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <h3>结构化认知</h3>
+          <p>智能整理，形成清晰的知识结构</p>
+        </article>
+
+        <article class="step animate-on-scroll" data-animate="fade-up" data-animate-delay="200">
+          <div class="step-number">03</div>
+          <div class="step-icon">
+            <svg width="64" aria-hidden="true" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="8" y="12" width="48" height="36" rx="4" stroke="#D4A843" stroke-width="2" fill="none"/>
+              <polyline points="16,40 24,28 32,34 40,20 48,26" stroke="#D4A843" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="24" cy="28" r="2.5" fill="#D4A843"/>
+              <circle cx="40" cy="20" r="2.5" fill="#D4A843"/>
+            </svg>
+          </div>
+          <h3>可视化成势</h3>
+          <p>通过图谱和数据，成长路径一目了然</p>
+        </article>
+
+        <article class="step animate-on-scroll" data-animate="fade-up" data-animate-delay="300">
+          <div class="step-number">04</div>
+          <div class="step-icon">
+            <svg width="64" aria-hidden="true" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M32 52 Q12 40 18 24 Q22 14 32 18 Q42 14 46 24 Q52 40 32 52Z" stroke="#D4A843" stroke-width="2" fill="none"/>
+              <path d="M32 18 L28 8 M32 18 L36 8" stroke="#8B7355" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M26 30 Q32 24 38 30" stroke="#D4A843" stroke-width="1.5" fill="none"/>
+              <circle cx="28" cy="36" r="2" fill="#D4A843"/>
+              <circle cx="36" cy="36" r="2" fill="#D4A843"/>
+            </svg>
+          </div>
+          <h3>持续展翼</h3>
+          <p>积累是必然，微小振动汇聚成成长势能</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== -->
+  <!-- Section 4: 游戏化激励展示       -->
+  <!-- ============================== -->
+  <section class="gamification" id="gamification">
+    <div class="container">
+      <h2 class="section-title">你的成长，看得见</h2>
+      <p class="section-subtitle">不是奇迹，而是厚积薄发</p>
+
+      <div class="gamification-layout">
+        <div class="gamification-visual">
+          <canvas id="wing-canvas" width="480" height="480"></canvas>
+        </div>
+
+        <div class="gamification-stats">
+          <div class="stat-card animate-on-scroll" data-animate="fade-up">
+            <span class="stat-label">认知势能指数</span>
+            <span class="stat-value stat-number" id="cognition-score">847</span>
+            <span class="cognition-score__trend">+23% 本月</span>
+          </div>
+
+          <div class="achievements">
+            <h3 class="achievements-title">成就徽章</h3>
+            <div class="achievement-grid">
+              <div class="achievement animate-on-scroll" data-animate="scale-in">
+                <div class="achievement-badge">
+                  <svg width="40" aria-hidden="true" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="20" cy="16" r="10" stroke="#D4A843" stroke-width="2" fill="none"/>
+                    <path d="M12 24 L14 36 L20 32 L26 36 L28 24" stroke="#D4A843" stroke-width="1.5" fill="none"/>
+                    <path d="M17 14 L20 10 L23 14" stroke="#D4A843" stroke-width="1.5" stroke-linecap="round"/>
+                    <text x="20" y="20" text-anchor="middle" fill="#D4A843" font-size="8" font-weight="bold">7</text>
+                  </svg>
+                </div>
+                <span class="achievement__name">连续阅读 7 天</span>
+              </div>
+
+              <div class="achievement animate-on-scroll" data-animate="scale-in" data-animate-delay="100">
+                <div class="achievement-badge">
+                  <svg width="40" aria-hidden="true" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="8" y="6" width="24" height="28" rx="2" stroke="#D4A843" stroke-width="2" fill="none"/>
+                    <path d="M14 14 H26 M14 20 H26 M14 26 H22" stroke="#D4A843" stroke-width="1.5" stroke-linecap="round"/>
+                    <text x="20" y="38" text-anchor="middle" fill="#D4A843" font-size="7">100</text>
+                  </svg>
+                </div>
+                <span class="achievement__name">累计 100 篇</span>
+              </div>
+
+              <div class="achievement animate-on-scroll" data-animate="scale-in" data-animate-delay="200">
+                <div class="achievement-badge">
+                  <svg width="40" aria-hidden="true" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="20" cy="20" r="12" stroke="#D4A843" stroke-width="2" fill="none"/>
+                    <circle cx="20" cy="20" r="3" fill="#D4A843"/>
+                    <circle cx="14" cy="14" r="2.5" fill="#8B7355"/>
+                    <circle cx="26" cy="14" r="2.5" fill="#8B7355"/>
+                    <circle cx="14" cy="26" r="2.5" fill="#8B7355"/>
+                    <circle cx="26" cy="26" r="2.5" fill="#8B7355"/>
+                    <line x1="20" y1="17" x2="16" y2="16" stroke="#D4A843" stroke-width="1"/>
+                    <line x1="20" y1="17" x2="24" y2="16" stroke="#D4A843" stroke-width="1"/>
+                    <line x1="22" y1="22" x2="25" y2="24" stroke="#D4A843" stroke-width="1"/>
+                  </svg>
+                </div>
+                <span class="achievement__name">知识网络 50 节点</span>
+              </div>
+
+              <div class="achievement animate-on-scroll" data-animate="scale-in" data-animate-delay="300">
+                <div class="achievement-badge">
+                  <svg width="40" aria-hidden="true" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <polygon points="20,4 24,15 36,15 26,22 30,34 20,26 10,34 14,22 4,15 16,15" stroke="#D4A843" stroke-width="2" fill="none"/>
+                    <text x="20" y="24" text-anchor="middle" fill="#D4A843" font-size="7" font-weight="bold">1K</text>
+                  </svg>
+                </div>
+                <span class="achievement__name">势能突破 1000</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gamification__manifesto animate-on-scroll" data-animate="fade-up">
+        <p>你已经在成长。</p>
+        <p>你已经在积累。</p>
+        <p>你已经在成势。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== -->
+  <!-- Section 5: 会员体系             -->
+  <!-- ============================== -->
+  <section class="pricing" id="pricing">
+    <div class="container">
+      <h2 class="section-title">选择你的成长节奏</h2>
+      <p class="section-subtitle">从免费开始，随时升级</p>
+
+      <div class="pricing-grid">
+        <!-- 免费版 -->
+        <article class="pricing-card animate-on-scroll" data-animate="fade-up">
+          <div class="pricing-card__header">
+            <h3 class="pricing-tier">免费版</h3>
+            <div class="pricing-card__price">
+              <span class="price">¥0</span>
+              <span class="price-period">永久免费</span>
+            </div>
+          </div>
+          <ul class="pricing-features">
+            <li>基础阅读捕捉</li>
+            <li>基础成长数据</li>
+            <li>简单知识结构</li>
+          </ul>
+          <a href="#" class="pricing-cta pricing-cta--free">免费开始</a>
+        </article>
+
+        <!-- 白银会员 -->
+        <article class="pricing-card animate-on-scroll" data-animate="fade-up" data-animate-delay="100">
+          <div class="pricing-card__header">
+            <h3 class="pricing-tier">白银会员</h3>
+            <div class="pricing-card__price">
+              <span class="price">¥19.9</span>
+              <span class="price-period">/月</span>
+            </div>
+          </div>
+          <ul class="pricing-features">
+            <li>每日 50 次捕捉</li>
+            <li>高级结构化工具</li>
+            <li>成长轨迹分析</li>
+            <li>社区交流权限</li>
+          </ul>
+          <a href="#" class="pricing-cta pricing-cta--silver">升级白银</a>
+        </article>
+
+        <!-- 黄金会员 -->
+        <article class="pricing-card pricing-card--recommended animate-on-scroll" data-animate="fade-up" data-animate-delay="200">
+          <div class="recommended-badge">推荐</div>
+          <div class="pricing-card__header">
+            <h3 class="pricing-tier">黄金会员</h3>
+            <div class="pricing-card__price">
+              <span class="price">¥39.9</span>
+              <span class="price-period">/月</span>
+            </div>
+          </div>
+          <ul class="pricing-features">
+            <li>无限捕捉次数</li>
+            <li>全面知识资产管理</li>
+            <li>个性化成长建议</li>
+            <li>优先客服 + VIP 活动</li>
+          </ul>
+          <a href="#" class="pricing-cta pricing-cta--gold">立即升级</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== -->
+  <!-- Section 6: 品牌故事             -->
+  <!-- ============================== -->
+  <section class="brand-story" id="brand-story">
+    <div class="brand-story__bg" aria-hidden="true"></div>
+    <div class="container">
+      <div class="brand-story-content animate-on-scroll" data-animate="fade-up">
+        <blockquote>
+          <p>蝉鸣虽小，日日不息，终能展翅。</p>
+          <p>阅读虽微，日积成智，终成体系。</p>
+        </blockquote>
+        <div class="brand-story__divider"></div>
+        <blockquote>
+          <p>知了，是蝉的名字；</p>
+          <p>Kreed，是蝉鸣的声音；</p>
+          <p>而你，是那只正在成长的鲲蝉。</p>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== -->
+  <!-- Section 7: FAQ + Footer CTA    -->
+  <!-- ============================== -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <h2 class="section-title">常见问题</h2>
+
+      <div class="faq-list">
+        <details class="faq-item animate-on-scroll" data-animate="fade-up">
+          <summary class="faq-question">Kreed 是做什么的？</summary>
+          <p class="faq-answer">Kreed 是一款将阅读行为量化、结构化、可视化的认知工具。它帮助你看见自己已经读过的、理解过的、思考过的，让阅读不再是过眼云烟。</p>
+        </details>
+
+        <details class="faq-item animate-on-scroll" data-animate="fade-up" data-animate-delay="50">
+          <summary class="faq-question">为什么叫"知了"？</summary>
+          <p class="faq-answer">"知了"既是蝉的名字，也是"知道了"的双关语——每一次阅读，都是一次"知道了"的瞬间。当知识被点亮，就像蝉鸣被听见。</p>
+        </details>
+
+        <details class="faq-item animate-on-scroll" data-animate="fade-up" data-animate-delay="100">
+          <summary class="faq-question">Kreed 如何帮助我成长？</summary>
+          <p class="faq-answer">Kreed 让你看见已经读过的、理解过的、思考过的。通过量化阅读行为、结构化知识碎片、可视化成长轨迹，让你每一天的积累都变得可感知、可追踪。</p>
+        </details>
+
+        <details class="faq-item animate-on-scroll" data-animate="fade-up" data-animate-delay="150">
+          <summary class="faq-question">Kreed 适合谁？</summary>
+          <p class="faq-answer">学生、创作者、产品人、研究者、终身学习者——只要你相信阅读的力量，只要你愿意让每一天的积累被看见，Kreed 就适合你。</p>
+        </details>
+
+        <details class="faq-item animate-on-scroll" data-animate="fade-up" data-animate-delay="200">
+          <summary class="faq-question">会不会很复杂？</summary>
+          <p class="faq-answer">不会。你只需要阅读，Kreed 会自动记录和整理。没有陡峭的学习曲线，没有复杂的设置流程。安装即用，阅读即记录。</p>
+        </details>
+
+        <details class="faq-item animate-on-scroll" data-animate="fade-up" data-animate-delay="250">
+          <summary class="faq-question">为什么用蝉作为视觉符号？</summary>
+          <p class="faq-answer">蝉鸣虽小却持续不断，正如每一次阅读都是一声微小却坚定的信号。蝉翼上的纹路天然就像一张知识图谱——每一个节点，每一条脉络，都是成长的痕迹。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer CTA -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-cta animate-on-scroll" data-animate="fade-up">
+        <p class="footer__tagline">一声蝉鸣，日积成信条；一页阅读，终成大智慧。</p>
+        <a href="#pricing" class="cta-button">开始你的微鸣之旅</a>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer-copyright">&copy; 2026 Kreed &times; 知了 &mdash; <a href="https://kreed.top">kreed.top</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
