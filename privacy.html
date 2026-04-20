@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>隐私政策 — Kreed × 知了</title>
+  <style>
+    :root {
+      --bg: #f8f7f4;
+      --card: #ffffff;
+      --text: #1a1a2e;
+      --muted: #6b7280;
+      --accent: #6366f1;
+      --border: #e5e7eb;
+      --code-bg: #f3f4f6;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.8;
+      padding: 0 16px 80px;
+    }
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    header {
+      padding: 60px 0 40px;
+      border-bottom: 2px solid var(--border);
+      margin-bottom: 48px;
+    }
+    .badge {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+    }
+    h1 {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      letter-spacing: -0.5px;
+    }
+    .meta {
+      color: var(--muted);
+      font-size: 14px;
+    }
+    nav {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px 32px;
+      margin-bottom: 40px;
+      position: sticky;
+      top: 16px;
+    }
+    nav h2 {
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 16px;
+    }
+    nav a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    nav a:hover { text-decoration: underline; }
+    section {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 40px;
+      margin-bottom: 24px;
+    }
+    h2 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    h2 .num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      background: var(--accent);
+      color: white;
+      border-radius: 50%;
+      font-size: 13px;
+      font-weight: 600;
+      flex-shrink: 0;
+    }
+    h3 {
+      font-size: 16px;
+      font-weight: 600;
+      margin: 24px 0 12px;
+      color: #374151;
+    }
+    p { margin-bottom: 16px; }
+    ul, ol {
+      margin: 16px 0;
+      padding-left: 24px;
+    }
+    li { margin-bottom: 8px; }
+    .highlight-box {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin: 20px 0;
+    }
+    .highlight-box.good {
+      background: #f0fdf4;
+      border-color: #bbf7d0;
+    }
+    .highlight-box.warn {
+      background: #fefce8;
+      border-color: #fde68a;
+    }
+    .highlight-box p:last-child { margin-bottom: 0; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-size: 14px;
+    }
+    th {
+      background: #f9fafb;
+      text-align: left;
+      padding: 10px 16px;
+      border: 1px solid var(--border);
+      font-weight: 600;
+    }
+    td {
+      padding: 10px 16px;
+      border: 1px solid var(--border);
+      vertical-align: top;
+    }
+    tr:nth-child(even) td { background: #fafafa; }
+    code {
+      background: var(--code-bg);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 13px;
+    }
+    .contact-box {
+      background: var(--accent);
+      color: white;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-top: 8px;
+    }
+    .contact-box h3 { color: white; margin-top: 0; }
+    .contact-box a { color: #c7d2fe; }
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 40px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <div class="badge">隐私政策</div>
+    <h1>Kreed × 知了</h1>
+    <p class="meta">版本 1.0 &nbsp;·&nbsp; 更新日期：2026 年 4 月 17 日 &nbsp;·&nbsp; 生效日期：2026 年 4 月 17 日</p>
+  </header>
+
+  <nav>
+    <h2>目录导航</h2>
+    <ul>
+      <li><a href="#scope">一、适用范围</a></li>
+      <li><a href="#collect">二、我们收集什么</a></li>
+      <li><a href="#storage">三、数据如何存储</a></li>
+      <li><a href="#thirdparty">四、第三方服务</a></li>
+      <li><a href="#rights">五、您的权利</a></li>
+      <li><a href="#retention">六、数据保留</a></li>
+      <li><a href="#changes">七、政策更新</a></li>
+      <li><a href="#contact">八、联系我们</a></li>
+    </ul>
+  </nav>
+
+  <section id="scope">
+    <h2><span class="num">一</span>适用范围</h2>
+    <p>本隐私政策适用于浏览器扩展「今日知识地图」（KnowledgeMap）。我们承诺仅将您授权的数据用于提升您的个人阅读体验，不会将您的个人数据用于广告定向或出售给第三方。</p>
+    <div class="highlight-box good">
+      <p><strong>我们的承诺：</strong>我们收集的每一项数据都有明确的产品用途，不会将您的阅读数据用于任何广告、分析或商业变现目的。</p>
+    </div>
+  </section>
+
+  <section id="collect">
+    <h2><span class="num">二</span>我们收集什么</h2>
+    <p>当您使用今日知识地图时，我们会在您知情并主动使用的范围内收集以下数据：</p>
+
+    <table>
+      <thead>
+        <tr><th>数据类型</th><th>收集方式</th><th>用途</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>访问记录<br><small>（URL、标题、时间）</small></td>
+          <td>您访问网页时自动记录</td>
+          <td>生成阅读统计和知识地图</td>
+        </tr>
+        <tr>
+          <td>阅读时长</td>
+          <td>标签页活跃时计时</td>
+          <td>计算阅读价值积分（RVC）</td>
+        </tr>
+        <tr>
+          <td>文章正文<br><small>（用于 AI 摘要）</small></td>
+          <td>读取页面 DOM 内容</td>
+          <td>生成 AI 摘要和关键词提取</td>
+        </tr>
+        <tr>
+          <td>主题分类标签</td>
+          <td>基于正文关键词自动分类</td>
+          <td>构建兴趣图谱和推荐</td>
+        </tr>
+        <tr>
+          <td>用户设置<br><small>（AI API Key 等）</small></td>
+          <td>您主动在扩展设置中填写</td>
+          <td>配置 AI 摘要功能</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="highlight-box">
+      <p><strong>我们不收集：</strong>密码、信用卡信息、Cookie、浏览历史（仅记录当前会话的阅读页面）、表单输入内容。</p>
+    </div>
+  </section>
+
+  <section id="storage">
+    <h2><span class="num">三</span>数据如何存储</h2>
+
+    <h3>本地存储（主要方式）</h3>
+    <p>您的所有阅读数据默认存储在<strong>您自己的设备</strong>上，使用浏览器的本地存储空间（IndexedDB）。我们没有也不会架设任何云端服务器来存储您的个人阅读数据。</p>
+
+    <h3>数据加密</h3>
+    <p>如果您配置了 AI 摘要功能，扩展与 AI 服务之间的通信通过 HTTPS 加密传输，防止中间人攻击。</p>
+
+    <h3>数据隔离</h3>
+    <p>您的数据存储在浏览器为扩展分配的独立存储空间中，与其他扩展和网站的数据完全隔离。</p>
+
+    <div class="highlight-box warn">
+      <p><strong>注意：</strong>卸载扩展时，本地存储的数据将自动清除。在卸载前，建议您使用导出功能备份重要数据。</p>
+    </div>
+  </section>
+
+  <section id="thirdparty">
+    <h2><span class="num">四</span>第三方服务</h2>
+
+    <p>今日知识地图在以下情况下会与第三方服务通信：</p>
+
+    <table>
+      <thead>
+        <tr><th>服务</th><th>数据内容</th><th>用途</th><th>隐私政策</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>MiniMax API<br><small>（AI 摘要）</small></td>
+          <td>文章正文片段<br><small>（您主动配置 API Key 后）</small></td>
+          <td>生成 AI 摘要</td>
+          <td><a href="https://www.minimax.io/privacy" target="_blank" rel="noopener">MiniMax 隐私政策</a></td>
+        </tr>
+        <tr>
+          <td>Ollama 本地模型<br><small>（可选）</small></td>
+          <td>文章正文片段</td>
+          <td>本地生成 AI 摘要<br><small>（无需联网）</small></td>
+          <td>无需联网，无第三方</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>我们不会将您的数据发送给任何广告平台、数据分析服务商或社交媒体平台。</p>
+    <p>如您使用最大化版（Max 版）并主动配置 n8n 工作流同步功能，您需要自行确保 n8n 服务的数据安全，此时数据传输由您自行控制的服务器处理。</p>
+  </section>
+
+  <section id="rights">
+    <h2><span class="num">五</span>您的权利</h2>
+
+    <p>您对您的个人数据拥有完整的控制权：</p>
+    <ol>
+      <li><strong>知情权：</strong>本隐私政策完整披露了我们的数据收集和使用方式。</li>
+      <li><strong>访问权：</strong>您可以随时通过扩展的 Dashboard 查看所有已记录的数据。</li>
+      <li><strong>导出权：</strong>您可以使用导出功能将所有数据导出为 JSON 或 CSV 文件。</li>
+      <li><strong>删除权：</strong>您可以随时删除单条记录、清空特定日期的数据，或一键清空所有数据。</li>
+      <li><strong>拒绝权：</strong>您可以随时停用扩展，所有追踪立即停止。</li>
+      <li><strong>投诉权：</strong>如您认为我们侵犯了您的隐私权，您有权向当地数据保护机构投诉。</li>
+    </ol>
+  </section>
+
+  <section id="retention">
+    <h2><span class="num">六</span>数据保留</h2>
+
+    <p>我们采用智能分层存储策略，自动管理数据保留：</p>
+
+    <table>
+      <thead>
+        <tr><th>数据类型</th><th>保留时间</th><th>说明</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>高价值内容<br><small>（深度阅读/收藏）</small></td>
+          <td>永久</td>
+          <td>完整存储，含 AI 摘要</td>
+        </tr>
+        <tr>
+          <td>中等价值内容</td>
+          <td>1 年</td>
+          <td>含 AI 摘要和关键词</td>
+        </tr>
+        <tr>
+          <td>低价值内容<br><small>（浅读/新闻）</small></td>
+          <td>3 个月</td>
+          <td>基础元数据，压缩存储</td>
+        </tr>
+        <tr>
+          <td>极低价值内容</td>
+          <td>1 天</td>
+          <td>仅 URL 哈希（去重用）</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>您可以在设置中切换存储模式（极简/平衡/完整），调整自动清理规则。</p>
+  </section>
+
+  <section id="changes">
+    <h2><span class="num">七</span>政策更新</h2>
+    <p>我们可能会不时更新本隐私政策。更改时将在扩展更新说明中告知，并在此页面发布新版本。</p>
+    <p>如更改涉及重大数据处理变更，我们将提前 30 天通知您。</p>
+    <p><strong>版本历史：</strong></p>
+    <ul>
+      <li>v1.0（2026 年 4 月 17 日）— 首次发布</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2><span class="num">八</span>联系我们</h2>
+    <p>如果您对本隐私政策有任何疑问、意见或请求，请通过以下方式联系我们：</p>
+
+    <div class="contact-box">
+      <h3>联系方式</h3>
+      <p>电子邮件：<a href="mailto:privacy@kreed.top">privacy@kreed.top</a></p>
+      <p>项目地址：<a href="https://github.com/kreed-ai/knowledge-map" target="_blank" rel="noopener">GitHub 项目主页</a></p>
+      <p>我们承诺在 7 个工作日内回复您的请求。</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Kreed × 知了 &nbsp;·&nbsp; <a href="https://kreed.top">kreed.top</a></p>
+  </footer>
+
+</div>
+
+<script>
+  // 平滑滚动 + 高亮当前目录项
+  document.querySelectorAll('nav a').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+</script>
+</body>
+</html>
