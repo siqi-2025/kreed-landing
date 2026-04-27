@@ -81,147 +81,33 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   /* ========================================================================
-   *  1. Particle Background System  (Hero canvas#particle-canvas)
+   *  1. Hero Soft-Moon Particles  (#particles)
    * ======================================================================== */
 
   (function initParticles() {
-    var canvas = $('#particle-canvas');
-    if (!canvas) return;
+    var container = document.getElementById('particles');
+    if (!container) return;
 
-    var ctx = canvas.getContext('2d');
-    var particles = [];
-    var mouse = { x: -9999, y: -9999 };
-    var PARTICLE_COUNT = 180;
-    var CONNECTION_DIST = 100;
-    var MOUSE_ATTRACT_DIST = 200;
-    var COLORS = [
-      'rgba(212,168,67,',  // 琥珀色 #D4A843
-      'rgba(26,77,46,',    // 深绿   #1A4D2E
-    ];
-    var rafId = null;
-
-    function resize() {
-      canvas.width  = canvas.offsetWidth;
-      canvas.height = canvas.offsetHeight;
-    }
-    resize();
-    window.addEventListener('resize', resize);
-
-    // Track mouse position relative to canvas
-    canvas.addEventListener('mousemove', function (e) {
-      var rect = canvas.getBoundingClientRect();
-      mouse.x = e.clientX - rect.left;
-      mouse.y = e.clientY - rect.top;
-    });
-    canvas.addEventListener('mouseleave', function () {
-      mouse.x = -9999;
-      mouse.y = -9999;
-    });
-
-    // Particle constructor
-    function Particle() {
-      this.x = Math.random() * canvas.width;
-      this.y = Math.random() * canvas.height;
-      this.size = Math.random() * 2 + 1;        // 1-3 px
-      this.colorBase = COLORS[Math.floor(Math.random() * COLORS.length)];
-      this.alpha = Math.random() * 0.5 + 0.3;   // 0.3-0.8
-      this.vx = (Math.random() - 0.5) * 0.4;
-      this.vy = (Math.random() - 0.5) * 0.4;
-    }
-
-    Particle.prototype.update = function () {
-      // Mouse attraction
-      var dx = mouse.x - this.x;
-      var dy = mouse.y - this.y;
-      var dist = Math.sqrt(dx * dx + dy * dy);
-      if (dist < MOUSE_ATTRACT_DIST && dist > 0) {
-        var force = (MOUSE_ATTRACT_DIST - dist) / MOUSE_ATTRACT_DIST * 0.015;
-        this.vx += dx / dist * force;
-        this.vy += dy / dist * force;
-      }
-
-      // Damping
-      this.vx *= 0.99;
-      this.vy *= 0.99;
-
-      this.x += this.vx;
-      this.y += this.vy;
-
-      // Wrap around edges
-      if (this.x < -10) this.x = canvas.width + 10;
-      if (this.x > canvas.width + 10) this.x = -10;
-      if (this.y < -10) this.y = canvas.height + 10;
-      if (this.y > canvas.height + 10) this.y = -10;
-    };
-
-    Particle.prototype.draw = function () {
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, Math.max(0.5, this.size), 0, Math.PI * 2);
-      ctx.fillStyle = this.colorBase + this.alpha + ')';
-      ctx.fill();
-    };
-
-    // Initialize particles
-    for (var i = 0; i < PARTICLE_COUNT; i++) {
-      particles.push(new Particle());
-    }
-
-    function drawConnections() {
-      for (var i = 0; i < particles.length; i++) {
-        var a = particles[i];
-        // Skip off-screen particles
-        if (a.x < -10 || a.x > canvas.width + 10 || a.y < -10 || a.y > canvas.height + 10) continue;
-
-        for (var j = i + 1; j < particles.length; j++) {
-          var b = particles[j];
-          if (b.x < -10 || b.x > canvas.width + 10 || b.y < -10 || b.y > canvas.height + 10) continue;
-
-          var dx = a.x - b.x;
-          var dy = a.y - b.y;
-          var distSq = dx * dx + dy * dy;
-          if (distSq < CONNECTION_DIST * CONNECTION_DIST) {
-            var dist = Math.sqrt(distSq);
-            var opacity = (1 - dist / CONNECTION_DIST) * 0.25;
-            ctx.beginPath();
-            ctx.moveTo(a.x, a.y);
-            ctx.lineTo(b.x, b.y);
-            ctx.strokeStyle = 'rgba(212,168,67,' + opacity + ')';
-            ctx.lineWidth = 0.6;
-            ctx.stroke();
-          }
-        }
-      }
-    }
-
-    function animate() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      for (var i = 0; i < particles.length; i++) {
-        particles[i].update();
-        particles[i].draw();
-      }
-      drawConnections();
-
-      rafId = requestAnimationFrame(animate);
-    }
-
-    animate();
-
-    // Pause when hero not visible to save performance
-    if ('IntersectionObserver' in window) {
-      var heroObserver = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            if (!rafId) animate();
-          } else {
-            if (rafId) {
-              cancelAnimationFrame(rafId);
-              rafId = null;
-            }
-          }
-        });
-      }, { threshold: 0 });
-      heroObserver.observe(canvas.parentElement || canvas);
+    var colors = ['rgba(212,168,67,0.8)', 'rgba(212,168,67,0.5)', 'rgba(26,77,46,0.6)'];
+    for (var i = 0; i < 40; i++) {
+      var p = document.createElement('div');
+      p.classList.add('particle');
+      var size = 1 + Math.random() * 2.5;
+      var color = colors[Math.floor(Math.random() * colors.length)];
+      var left = 5 + Math.random() * 90;
+      var delay = Math.random() * 20;
+      var duration = 15 + Math.random() * 20;
+      p.style.cssText =
+        'width:' + size + 'px;' +
+        'height:' + size + 'px;' +
+        'background:' + color + ';' +
+        'left:' + left + '%;' +
+        'bottom:' + (-10 + Math.random() * 30) + '%;' +
+        'animation-delay:' + delay + 's;' +
+        'animation-duration:' + duration + 's;' +
+        'opacity:' + (0.15 + Math.random() * 0.45) + ';' +
+        'box-shadow:0 0 ' + (size * 3) + 'px ' + color + ';';
+      container.appendChild(p);
     }
   })();
 
