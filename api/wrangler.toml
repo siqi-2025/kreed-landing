@@ -1,0 +1,8 @@
+name = "kreed-waitlist"
+main = "src/index.js"
+compatibility_date = "2026-04-22"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "kreed-waitlist"
+database_id = "86731750-4af7-4318-ab8a-e25170b86335"

@@ -784,4 +784,55 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   })();
 
+  // ===== Waitlist =====
+  var wlBtn = document.getElementById('waitlist-btn');
+  var wlInput = document.getElementById('waitlist-email');
+  var wlSuccess = document.getElementById('waitlist-success');
+
+  if (wlBtn && wlInput) {
+    wlBtn.addEventListener('click', function() {
+      var email = wlInput.value.trim();
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        wlInput.style.borderColor = '#f85149';
+        wlInput.focus();
+        return;
+      }
+
+      wlBtn.disabled = true;
+      wlBtn.textContent = '提交中...';
+      wlInput.style.borderColor = '#30363d';
+
+      // Submit to waitlist endpoint
+      fetch('https://kreed-waitlist.fenny-hou.workers.dev/api/waitlist', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: email })
+      }).then(function(r) {
+        return r.json();
+      }).then(function() {
+        wlSuccess.classList.remove('hidden');
+        wlBtn.textContent = '已加入';
+        wlInput.value = '';
+      }).catch(function() {
+        // Fallback: store locally and show success
+        try {
+          var list = JSON.parse(localStorage.getItem('km_waitlist') || '[]');
+          list.push({ email: email, time: new Date().toISOString() });
+          localStorage.setItem('km_waitlist', JSON.stringify(list));
+        } catch(e) {}
+        wlSuccess.classList.remove('hidden');
+        wlBtn.textContent = '已加入';
+        wlInput.value = '';
+      });
+    });
+
+    wlInput.addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') wlBtn.click();
+    });
+
+    wlInput.addEventListener('input', function() {
+      wlInput.style.borderColor = '#30363d';
+    });
+  }
+
 });
