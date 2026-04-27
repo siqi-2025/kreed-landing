@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>隐私政策 — Kreed × 知了</title>
+  <title>隐私政策 — 今日知识地图 (KnowledgeMap)</title>
   <style>
     :root {
       --bg: #f8f7f4;
@@ -186,13 +186,14 @@
 
   <header>
     <div class="badge">隐私政策</div>
-    <h1>Kreed × 知了</h1>
+    <h1>今日知识地图 (KnowledgeMap)</h1>
     <p class="meta">版本 1.0 &nbsp;·&nbsp; 更新日期：2026 年 4 月 17 日 &nbsp;·&nbsp; 生效日期：2026 年 4 月 17 日</p>
   </header>
 
   <nav>
     <h2>目录导航</h2>
     <ul>
+      <li><a href="#permissions">权限说明</a></li>
       <li><a href="#scope">一、适用范围</a></li>
       <li><a href="#collect">二、我们收集什么</a></li>
       <li><a href="#storage">三、数据如何存储</a></li>
@@ -204,11 +205,48 @@
     </ul>
   </nav>
 
+  <section id="permissions">
+    <h2>扩展权限说明</h2>
+    <p>今日知识地图请求以下浏览器权限，每项权限均有明确的功能必要性：</p>
+    <table>
+      <thead>
+        <tr><th>权限</th><th>用途</th><th>必要性说明</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>tabs</code></td>
+          <td>获取当前标签页的 URL 和标题</td>
+          <td>核心功能：记录阅读页面、生成知识地图的必要输入</td>
+        </tr>
+        <tr>
+          <td><code>activeTab</code></td>
+          <td>访问当前活跃标签页的内容</td>
+          <td>AI 摘要：读取页面正文生成摘要和关键词</td>
+        </tr>
+        <tr>
+          <td><code>storage</code></td>
+          <td>本地数据存储</td>
+          <td>存储阅读记录、用户设置和积分数据</td>
+        </tr>
+        <tr>
+          <td><code>alarms</code></td>
+          <td>定时任务调度</td>
+          <td>自动清理过期数据、定时统计更新</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>我们不请求 <code>history</code>、<code>bookmarks</code>、<code>cookies</code> 等敏感权限。所有数据均存储在您的浏览器本地。</p>
+  </section>
+
   <section id="scope">
     <h2><span class="num">一</span>适用范围</h2>
     <p>本隐私政策适用于浏览器扩展「今日知识地图」（KnowledgeMap）。我们承诺仅将您授权的数据用于提升您的个人阅读体验，不会将您的个人数据用于广告定向或出售给第三方。</p>
     <div class="highlight-box good">
       <p><strong>我们的承诺：</strong>我们收集的每一项数据都有明确的产品用途，不会将您的阅读数据用于任何广告、分析或商业变现目的。</p>
+    </div>
+    <div class="highlight-box">
+      <p><strong>Limited Use Compliance:</strong> The use of information received from Google APIs will adhere to the <a href="https://developer.chrome.com/docs/webstore/program-policies/" target="_blank" rel="noopener">Chrome Web Store User Data Policy</a>, including the Limited Use requirements.</p>
+      <p><strong>有限使用合规声明：</strong>从 Google API 获取的信息的使用将遵守 Chrome Web Store 用户数据政策，包括有限使用要求。</p>
     </div>
   </section>
 
@@ -286,6 +324,12 @@
           <td>文章正文片段<br><small>（您主动配置 API Key 后）</small></td>
           <td>生成 AI 摘要</td>
           <td><a href="https://www.minimax.io/privacy" target="_blank" rel="noopener">MiniMax 隐私政策</a></td>
+        </tr>
+        <tr>
+          <td>智谱 GLM API<br><small>（AI 摘要/分类）</small></td>
+          <td>文章正文片段<br><small>（您主动配置 API Key 后）</small></td>
+          <td>生成 AI 摘要和主题分类</td>
+          <td><a href="https://open.bigmodel.cn/policies/privacy" target="_blank" rel="noopener">智谱隐私政策</a></td>
         </tr>
         <tr>
           <td>Ollama 本地模型<br><small>（可选）</small></td>
@@ -366,14 +410,14 @@
 
     <div class="contact-box">
       <h3>联系方式</h3>
-      <p>电子邮件：<a href="mailto:privacy@kreed.top">privacy@kreed.top</a></p>
-      <p>项目地址：<a href="https://github.com/kreed-ai/knowledge-map" target="_blank" rel="noopener">GitHub 项目主页</a></p>
+      <p>电子邮件：<a href="mailto:knowledge-map@example.com">knowledge-map@example.com</a></p>
+      <p>项目地址：<a href="https://github.com/your-repo" target="_blank" rel="noopener">GitHub 项目主页</a></p>
       <p>我们承诺在 7 个工作日内回复您的请求。</p>
     </div>
   </section>
 
   <footer>
-    <p>© 2026 Kreed × 知了 &nbsp;·&nbsp; <a href="https://kreed.top">kreed.top</a></p>
+    <p>© 2026 今日知识地图 (KnowledgeMap) &nbsp;·&nbsp; 本插件为开源项目，遵循 MIT 许可证</p>
   </footer>
 
 </div>
