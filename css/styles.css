@@ -252,24 +252,27 @@ ul, ol {
   50%       { opacity: 1; }
 }
 
-/* Floating particles */
+/* Floating particles — 自下而上飞升 */
 .hero-particles {
   position: absolute;
   inset: 0;
   pointer-events: none;
   z-index: 0;
+  overflow: hidden;
 }
 .particle {
   position: absolute;
   border-radius: 50%;
   animation: float-particle linear infinite;
   opacity: 0;
+  will-change: transform, opacity;
 }
 @keyframes float-particle {
-  0%   { opacity: 0; transform: translateY(0) scale(0.5); }
-  10%  { opacity: 1; }
-  90%  { opacity: 0.6; }
-  100% { opacity: 0; transform: translateY(-120vh) scale(1); }
+  0%   { opacity: 0; transform: translateY(0) scale(0.3); }
+  5%   { opacity: 0.9; }
+  50%  { opacity: 0.6; }
+  95%  { opacity: 0.15; }
+  100% { opacity: 0; transform: translateY(-115vh) scale(1); }
 }
 
 .hero-content {

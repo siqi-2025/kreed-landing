@@ -81,32 +81,38 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   /* ========================================================================
-   *  1. Hero Soft-Moon Particles  (#particles)
+   *  1. Hero Soft-Moon Particles  (#particles) — 自下而上飞升的金色微粒
    * ======================================================================== */
 
   (function initParticles() {
     var container = document.getElementById('particles');
     if (!container) return;
 
-    var colors = ['rgba(212,168,67,0.8)', 'rgba(212,168,67,0.5)', 'rgba(26,77,46,0.6)'];
-    for (var i = 0; i < 40; i++) {
+    var colors = [
+      'rgba(212,168,67,0.9)',
+      'rgba(232,200,122,0.8)',
+      'rgba(212,168,67,0.6)',
+      'rgba(255,220,130,0.7)'
+    ];
+    for (var i = 0; i < 55; i++) {
       var p = document.createElement('div');
       p.classList.add('particle');
-      var size = 1 + Math.random() * 2.5;
+      var size = 2 + Math.random() * 3.5;
       var color = colors[Math.floor(Math.random() * colors.length)];
-      var left = 5 + Math.random() * 90;
-      var delay = Math.random() * 20;
-      var duration = 15 + Math.random() * 20;
+      var left = 3 + Math.random() * 94;
+      var delay = Math.random() * 14;
+      var duration = 8 + Math.random() * 12;
+      var glowSize = size * 4 + Math.random() * 4;
       p.style.cssText =
         'width:' + size + 'px;' +
         'height:' + size + 'px;' +
         'background:' + color + ';' +
         'left:' + left + '%;' +
-        'bottom:' + (-10 + Math.random() * 30) + '%;' +
+        'bottom:' + (-5 + Math.random() * 10) + '%;' +
         'animation-delay:' + delay + 's;' +
         'animation-duration:' + duration + 's;' +
-        'opacity:' + (0.15 + Math.random() * 0.45) + ';' +
-        'box-shadow:0 0 ' + (size * 3) + 'px ' + color + ';';
+        'box-shadow:0 0 ' + glowSize + 'px ' + color +
+          ',0 0 ' + (glowSize * 2) + 'px rgba(212,168,67,0.15);';
       container.appendChild(p);
     }
   })();
